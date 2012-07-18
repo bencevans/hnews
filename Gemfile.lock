@@ -1,0 +1,22 @@
+PATH
+  remote: .
+  specs:
+    HNews (0.0.1)
+      gli
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    gli (1.6.0)
+    json (1.7.3)
+    rake (0.9.2.2)
+    rdoc (3.12)
+      json (~> 1.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  HNews!
+  rake
+  rdoc

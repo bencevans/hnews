@@ -1,0 +1,169 @@
+#!/usr/bin/env ruby
+# 1.9 adds realpath to resolve symlinks; 1.8 doesn't
+# have this method, so we add it so we get resolved symlinks
+# and compatibility
+
+require 'hn'
+require 'paint'
+require 'json'
+
+
+unless File.respond_to? :realpath
+  class File #:nodoc:
+    def self.realpath path
+      return realpath(File.readlink(path)) if symlink?(path)
+      path
+    end
+  end
+end
+$: << File.expand_path(File.dirname(File.realpath(__FILE__)) + '/../lib')
+require 'rubygems'
+require 'gli'
+require 'HNews_version'
+
+include GLI
+
+program_desc 'Describe your application here'
+
+version HNews::VERSION
+
+desc 'Describe some switch here'
+switch [:s,:switch]
+
+desc 'Describe some flag here'
+default_value 'the default'
+arg_name 'The name of the argument'
+flag [:f,:flagname]
+
+desc 'Describe best here'
+arg_name 'Describe arguments to best here'
+command :best do |c|
+  c.desc 'Describe a switch to best'
+  c.switch :s
+
+  c.desc 'Describe a flag to best'
+  c.default_value 'default'
+  c.flag :f
+  c.action do |global_options,options,args|
+
+    hnData = HackerNews::Engine.best
+    cachePage hnData
+    genericRender hnData
+
+  end
+end
+
+desc 'Get Home Items'
+arg_name 'none'
+command :home do |c|
+  c.action do |global_options,options,args|
+
+    hnData = HackerNews::Engine.homepage
+    cachePage hnData
+    genericRender hnData
+
+  end
+end
+
+desc 'Get New Items'
+arg_name 'pageNumber'
+command :new do |c|
+  c.action do |global_options,options,args|
+    hnData = HackerNews::Engine.newest
+    cachePage hnData
+    genericRender hnData
+  end
+end
+
+desc 'Upvote Item from last Loaded Page'
+arg_name 'lastPageItemID'
+command :upvote do |c|
+  c.action do |global_options,options,args|
+  end
+end
+
+desc 'Open Item from last Loaded Page'
+arg_name 'lastPageItemID'
+command :open do |c|
+  c.action do |global_options,options,args|
+    
+  end
+end
+
+desc 'Open Comments Page from last loaded page'
+arg_name 'lastPageItemID'
+command :comments do |c|
+  c.action do |global_options,options,args|
+  end
+end
+
+pre do |global,command,options,args|
+  # Pre logic here
+  # Return true to proceed; false to abort and not call the
+  # chosen command
+  # Use skips_pre before a command to skip this block
+  # on that command only
+  true
+end
+
+post do |global,command,options,args|
+  # Post logic here
+  # Use skips_post before a command to skip this
+  # block on that command only
+end
+
+on_error do |exception|
+  # Error logic here
+  # return false to skip default error handling
+  true
+end
+
+# Our Stuff
+def cachePage (itemArray)
+  itemCount = 1
+  toSave = []
+  itemArray.each do |item|
+    toSave[itemCount] = item.to_json
+    itemCount = itemCount + 1
+  end
+  File.open(File.expand_path("~/.hnews.cache"),"w") do |f|
+    f.write(toSave.to_json)
+  end
+
+end
+
+def genericRender (hnData)
+  count = 1
+  hnDataHighestNum = hnData.length
+  highestNumLen = hnDataHighestNum.to_s().length
+  line = []
+  cachePage(hnData) 
+  hnData.each do |item|
+
+    line[1] =  Paint['[' + count.to_s() + ']', :yellow]
+    for i in -1...highestNumLen - count.to_s().length
+      line[1] = line[1] + ' '
+    end
+
+    line[1] = line[1] + Paint[item.title, :white]
+
+    if defined? item.siteline
+      line[1] = line[1] + ' ' + Paint['(' + item.site + ')', "666"]
+    end
+
+    puts line[1]
+
+    line[2] = ''
+    for i in -3...highestNumLen
+      line[2] = line[2] + ' '
+    end
+
+    line[2] = line[2] + Paint[item.points.to_s() + ' points by ' + item.username.to_s() + ' | ' + item.num_comments.to_s() + ' comments ' + item.time_string.to_s(), "666"]
+    puts line[2]
+    count = count + 1
+  end
+end
+
+exit GLI.run(ARGV)
+
+
