@@ -23,27 +23,13 @@ require 'HNews_version'
 
 include GLI
 
-program_desc 'Describe your application here'
+program_desc 'Hacker News CLI'
 
 version HNews::VERSION
 
-desc 'Describe some switch here'
-switch [:s,:switch]
-
-desc 'Describe some flag here'
-default_value 'the default'
-arg_name 'The name of the argument'
-flag [:f,:flagname]
-
-desc 'Describe best here'
-arg_name 'Describe arguments to best here'
+desc 'Get Best Items'
+arg_name 'none'
 command :best do |c|
-  c.desc 'Describe a switch to best'
-  c.switch :s
-
-  c.desc 'Describe a flag to best'
-  c.default_value 'default'
-  c.flag :f
   c.action do |global_options,options,args|
 
     hnData = HackerNews::Engine.best
