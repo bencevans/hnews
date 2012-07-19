@@ -72,7 +72,7 @@ desc 'Open Item from last Loaded Page'
 arg_name 'lastPageItemID'
 command :open do |c|
   c.action do |global_options,options,args|
-    
+
   end
 end
 
@@ -108,10 +108,20 @@ end
 def cachePage (itemArray)
   itemCount = 1
   toSave = []
+  cacheVars = ['title', 'siteline', 'site', 'points', 'username', 'num_comments', 'time_string']
   itemArray.each do |item|
-    toSave[itemCount] = item.to_json
+
+    toSave[itemCount] = {}
+
+    cacheVars.each do |cacheVar|
+      if defined? item[cacheVar]
+        toSave[itemCount][cacheVar] = item[cacheVar]
+      end
+    end
+
     itemCount = itemCount + 1
   end
+
   File.open(File.expand_path("~/.hnews.cache"),"w") do |f|
     f.write(toSave.to_json)
   end
