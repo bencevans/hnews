@@ -22,4 +22,6 @@ lib/HNews_version.rb
   s.add_development_dependency('rake')
   s.add_development_dependency('rdoc')
   s.add_runtime_dependency('gli')
+  s.add_runtime_dependency('hn')
+  s.add_runtime_dependency('launchy')
 end
