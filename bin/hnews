@@ -21,13 +21,13 @@ end
 $: << File.expand_path(File.dirname(File.realpath(__FILE__)) + '/../lib')
 require 'rubygems'
 require 'gli'
-require 'HNews_version'
+require 'hnews_version'
 
 include GLI
 
 program_desc 'Hacker News CLI'
 
-version HNews::VERSION
+version hnews::VERSION
 
 desc 'Get Best Items'
 arg_name 'none'

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    HNews (0.0.1)
+    hnews (0.0.1)
       gli
 
 GEM
@@ -17,6 +17,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  HNews!
+  hnews!
   rake
   rdoc

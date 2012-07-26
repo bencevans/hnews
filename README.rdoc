@@ -1,6 +1,6 @@
-= HNews
+= hnews
 
 Simplistic Hacker News (news.ycombinator.com) CLI.
 
-:include:HNews.rdoc
+:include:hnews.rdoc
 

@@ -1,8 +1,8 @@
-= <tt>HNews</tt>
+= <tt>hnews</tt>
 
 Describe your application here
 
-    HNews [global options] command_name [command-specific options] [--] arguments...
+    hnews [global options] command_name [command-specific options] [--] arguments...
 
 * Use the command +help+ to get a summary of commands
 * Use the command <tt>help command_name</tt> to get a help for +command_name+
