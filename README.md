@@ -2,7 +2,7 @@
 
 ##Example
 
-[View animated GIF example.](./example.gif)
+[View animated GIF example.](http://f.cl.ly/items/3J2E2N2c0a2O3y3v1c1q/example.gif)
 
 ##Installation
 
