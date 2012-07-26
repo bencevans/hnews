@@ -1,6 +1,0 @@
-= hnews
-
-Simplistic Hacker News (news.ycombinator.com) CLI.
-
-:include:hnews.rdoc
-

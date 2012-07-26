@@ -27,7 +27,7 @@ include GLI
 
 program_desc 'Hacker News CLI'
 
-version hnews::VERSION
+version HNews::VERSION
 
 desc 'Get Best Items'
 arg_name 'none'
