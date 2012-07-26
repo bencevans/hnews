@@ -2,7 +2,7 @@
 require File.join([File.dirname(__FILE__),'lib','hnews_version.rb'])
 spec = Gem::Specification.new do |s| 
   s.name = 'hnews'
-  s.version = hnews::VERSION
+  s.version = HNews::VERSION
   s.author = 'Ben Evans'
   s.email = 'ben@bensbit.co.uk'
   s.homepage = 'http://bensbit.co.uk'
