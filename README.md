@@ -35,7 +35,7 @@ The Following may require [this](https://github.com/seven1m/hackernews) gem in o
 
 ####Posibility
 
-`hnews comment [itemNo] [comment]`- Upvote a particular item.
+`hnews comment [itemNo] [comment]`- Comment on a particular item.
 
 ##Contributing
 
