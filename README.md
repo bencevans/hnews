@@ -12,13 +12,13 @@ Requires Ruby/RubyGems. Then …
 
 ##Commands
 
-`hews home` - Lists [Hacker News](http://news.ycombinator.com) homepage items.
+`hnews home` - Lists [Hacker News](http://news.ycombinator.com) homepage items.
 
 `hnews new` - Lists new [Hacker News](http://news.ycombinator.com) items.
 
-`hews best` - Lists best [Hacker News](http://news.ycombinator.com) items.
+`hnews best` - Lists best [Hacker News](http://news.ycombinator.com) items.
 
-`hews open [itemNo]` - Opens the selected item.
+`hnews open [itemNo]` - Opens the selected item.
 
 ####Planned
 
@@ -27,9 +27,9 @@ The Following may require [this](https://github.com/seven1m/hackernews) gem in o
 `hnews comments [itemNo]` - Open Hacker News Discussion/Comments Page.
 
 
-`hews login` - Login in order to upvote/comments etc.
+`hnews login` - Login in order to upvote/comments etc.
 
-`hews logout`- Logout and remove any saved credentials.
+`hnews logout`- Logout and remove any saved credentials.
 
 `hnews upvote [itemNo]`- Upvote a particular item.
 
