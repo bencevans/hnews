@@ -21,8 +21,9 @@ lib/hnews_version.rb
   s.executables << 'hnews'
   s.add_development_dependency('rake')
   s.add_development_dependency('rdoc')
-  s.add_runtime_dependency('gli')
+  s.add_runtime_dependency('gli', '~>1.6.0')
   s.add_runtime_dependency('hn')
   s.add_runtime_dependency('paint')
+  s.add_runtime_dependency('json')
   s.add_runtime_dependency('launchy')
 end
