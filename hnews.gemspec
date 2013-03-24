@@ -14,13 +14,10 @@ bin/hnews
 lib/hnews_version.rb
   )
   s.require_paths << 'lib'
-  s.has_rdoc = true
-  s.extra_rdoc_files = ['hnews.rdoc']
   s.rdoc_options << '--title' << 'hnews' << '--main' << 'README.rdoc' << '-ri'
   s.bindir = 'bin'
   s.executables << 'hnews'
   s.add_development_dependency('rake')
-  s.add_development_dependency('rdoc')
   s.add_runtime_dependency('gli', '~>1.6.0')
   s.add_runtime_dependency('hn')
   s.add_runtime_dependency('paint')
