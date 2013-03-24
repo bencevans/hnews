@@ -5,7 +5,7 @@ spec = Gem::Specification.new do |s|
   s.version = HNews::VERSION
   s.author = 'Ben Evans'
   s.email = 'ben@bensbit.co.uk'
-  s.homepage = 'http://bensbit.co.uk'
+  s.homepage = 'http://hnews.bensbit.co.uk'
   s.platform = Gem::Platform::RUBY
   s.summary = 'CLI Hacker News (news.ycombinator.com)'
 # Add your other files here if you make them
