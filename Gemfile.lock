@@ -1,17 +1,28 @@
 PATH
   remote: .
   specs:
-    hnews (0.0.1)
-      gli
+    hnews (0.0.4)
+      gli (~> 1.6.0)
+      hn
+      json
+      launchy
+      paint
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
+    addressable (2.3.3)
+    chronic (0.9.1)
     gli (1.6.0)
+    hn (0.0.7)
+      chronic
+      nokogiri
     json (1.7.3)
+    launchy (2.2.0)
+      addressable (~> 2.3)
+    nokogiri (1.5.9)
+    paint (0.8.5)
     rake (0.9.2.2)
-    rdoc (3.12)
-      json (~> 1.4)
 
 PLATFORMS
   ruby
@@ -19,4 +30,3 @@ PLATFORMS
 DEPENDENCIES
   hnews!
   rake
-  rdoc
