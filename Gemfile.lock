@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hnews (0.0.4)
+    hnews (0.0.5)
       gli (~> 1.6.0)
       hn
       json
@@ -11,18 +11,20 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.3)
-    chronic (0.9.1)
+    addressable (2.3.5)
+    chronic (0.10.2)
     gli (1.6.0)
-    hn (0.0.7)
+    hn (0.0.9)
       chronic
       nokogiri
-    json (1.7.3)
-    launchy (2.2.0)
+    json (1.8.1)
+    launchy (2.4.2)
       addressable (~> 2.3)
-    nokogiri (1.5.9)
-    paint (0.8.5)
-    rake (0.9.2.2)
+    mini_portile (0.5.2)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
+    paint (0.8.6)
+    rake (10.1.1)
 
 PLATFORMS
   ruby
