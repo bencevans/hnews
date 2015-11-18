@@ -18,6 +18,10 @@
 
     # Open an item from last list in browser
     $ hnews open [item number]
+    
+## Example
+
+![Demo GIF](http://f.cl.ly/items/3J2E2N2c0a2O3y3v1c1q/example.gif)
 
 ## Licence
 
