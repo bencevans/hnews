@@ -144,7 +144,7 @@ def genericRender (hnData)
   hnDataHighestNum = hnData.length
   highestNumLen = hnDataHighestNum.to_s().length
   line = []
-  cachePage(hnData) 
+  cachePage(hnData)
   hnData.each do |item|
 
     line[1] =  Paint['[' + count.to_s() + ']', :yellow]
@@ -157,8 +157,6 @@ def genericRender (hnData)
     if defined? item.siteline
       line[1] = line[1] + ' ' + Paint['(' + item.site + ')', "666"]
     end
-
-    line[1] = line[1] + ' ' + Paint[item.link, "000"]
 
     puts line[1]
 
@@ -174,5 +172,3 @@ def genericRender (hnData)
 end
 
 exit GLI.run(ARGV)
-
-
