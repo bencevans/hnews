@@ -113,7 +113,7 @@ end
 def cachePage (itemArray)
   itemCount = 1
   toSave = []
-  cacheVars = ['title', 'link', 'siteline', 'site', 'points', 'username', 'num_comments', 'time_string']
+  cacheVars = ['title', 'link', 'siteline', 'site', 'points', 'username', 'num_comments', 'time_string', 'id']
   itemArray.each do |item|
 
     toSave[itemCount] = {}
@@ -166,6 +166,7 @@ def genericRender (hnData)
     end
 
     line[2] = line[2] + Paint[item.points.to_s() + ' points by ' + item.username.to_s() + ' | ' + item.num_comments.to_s() + ' comments ' + item.time_string.to_s(), "666"]
+    line[2] = line[2] + ' ' + Paint['https://news.ycombinator.com/item?id=' + item.id.to_s, "000"]
     puts line[2]
     count = count + 1
   end
